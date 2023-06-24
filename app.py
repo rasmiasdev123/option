@@ -38,7 +38,7 @@ page_css = """
     <style>
         #nifty-option-chain{
             background-color:#FFD0D0;
-            margin-top:-50px;
+            margin-top:-90px;
             text-align:center;
             color: #40128B;
             border-radius: 10px;
@@ -87,10 +87,19 @@ page_css = """
 
     </style>
 """
+
+hide_st_style = """
+        <style> 
+
+        #MainMenu {visibility:hidden;}
+        footer{visibility:hidden;}
+        header{visibility:hidden;}
+
+        </style>"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.markdown(page_css, unsafe_allow_html=True)
 st.title("NIFTY OPTION CHAIN")
-
-
 
 # Create the table HTML
 table_html = '<table style="width: 100%;margin-top:40px;">'
