@@ -209,8 +209,7 @@ table_html += "</tbody></table>"
 st.markdown(table_html, unsafe_allow_html=True)
 
 selected_strike_price = st.selectbox("Select Strike Price", strikePrice)
-filtered_df = today_data.query(f"datetime.dt.date == @today and strikePrice == {selected_strike_price}")
-
+filtered_df= today_data[(today_data['datetime'].dt.date == today) & (today_data['strikePrice'] == selected_strike_price)]
 
 col1, col2 = st.columns(2)
 
@@ -248,3 +247,4 @@ col2.pyplot(fig1)
 
 
 count = st_autorefresh(interval=60000)
+
