@@ -2,3 +2,4 @@ pandas
 Requests
 streamlit
 streamlit_autorefresh
+matplotlib
