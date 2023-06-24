@@ -42,7 +42,6 @@ page_css = """
             text-align:center;
             color: #40128B;
             border-radius: 10px;
-            max-width: 60%;
         }
         .css-1y4p8pa{
             max-width: 90%;
