@@ -38,7 +38,7 @@ page_css = """
     <style>
         #nifty-option-chain{
             background-color:#FFD0D0;
-            margin-top:-90px;
+            margin-top:-40px;
             text-align:center;
             color: #40128B;
             border-radius: 10px;
