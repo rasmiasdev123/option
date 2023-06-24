@@ -46,6 +46,7 @@ page_css = """
         }
         .css-1y4p8pa{
             max-width: 90%;
+            padding: 2rem 1rem 10rem;
         }
         .css-1629p8f{
             display:flex;
