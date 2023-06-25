@@ -79,5 +79,3 @@ def option_chain():
     selected_rows = merged_df.iloc[start_index:end_index]
     final = selected_rows[['oi_ce', 'oiChange_ce', 'pctOiChange_ce', 'lastPrice_ce', 'volume_ce', 'strikePrice', 'volume_pe','lastPrice_pe' ,'pctOiChange_pe','oiChange_pe','oi_pe']]
     return final, ltp
-
-option_chain()
