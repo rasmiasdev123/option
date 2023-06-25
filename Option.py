@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, time
 
 
 def option_chain():
@@ -56,8 +56,11 @@ def option_chain():
                 pe.append(PE)
                 current_data.append(c_data)
 
-    exiting_df = pd.concat([exiting_df, pd.DataFrame(current_data)], ignore_index=True)
-    exiting_df.to_csv('data.txt', index=False)
+    if time(9,15) <= datetime.now().time() <= time(15,25):
+        exiting_df = pd.concat([exiting_df, pd.DataFrame(current_data)], ignore_index=True)
+        exiting_df.to_csv('data.txt', index=False)
+    # exiting_df = pd.concat([exiting_df, pd.DataFrame(current_data)], ignore_index=True)
+    # exiting_df.to_csv('data.txt', index=False)
     ce_df = pd.DataFrame(ce)
     ce_df = ce_df[['strikePrice', 'openInterest', 'changeinOpenInterest','pchangeinOpenInterest', 'totalTradedVolume', 'lastPrice']]
     ce_df.rename(columns={'strikePrice':'strikePrice','changeinOpenInterest': 'oiChange' ,'openInterest':'oi', 'pchangeinOpenInterest':'pctOiChange', 'totalTradedVolume':'volume'}, inplace=True)
